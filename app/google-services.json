@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "302092124259",
+    "project_id": "maestros-7158a",
+    "storage_bucket": "maestros-7158a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302092124259:android:1078cc69805fb93ffff856",
+        "android_client_info": {
+          "package_name": "com.example.maestros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302092124259-2m8b83rmq0nba9o3520mqnpoikgnp7uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc2ZB5rcwahMk4kzbMjtNmSLB-PeAZzGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302092124259-2m8b83rmq0nba9o3520mqnpoikgnp7uq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
