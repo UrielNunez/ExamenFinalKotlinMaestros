@@ -44,6 +44,10 @@ class AccountActivity : AppCompatActivity() {
             intent = Intent(this, UpdatePasswordActivity::class.java)
             startActivity(intent)
         }
+        binding.deleteAccountTextView.setOnClickListener {
+            intent = Intent(this, DeleteAccountActivity::class.java)
+            startActivity(intent)
+        }
 
         updateUI()
     }

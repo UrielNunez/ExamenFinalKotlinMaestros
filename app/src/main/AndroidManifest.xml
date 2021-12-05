@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Maestros">
         <activity
+            android:name=".Login.DeleteAccountActivity"
+            android:exported="true" />
+        <activity
             android:name=".Login.UpdatePasswordActivity"
             android:exported="true" />
         <activity
