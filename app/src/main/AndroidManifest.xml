@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Maestros">
         <activity
+            android:name=".Login.AccountActivity"
+            android:exported="true" />
+        <activity
             android:name=".Login.SignInActivity"
             android:exported="true">
             <intent-filter>
@@ -20,8 +23,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
