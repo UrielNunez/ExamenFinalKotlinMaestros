@@ -30,4 +30,21 @@
     <string name="subtitle_delete_account">Por motivos de seguridad para eliminar tu cuenta por completo, debes de ingresar tu contraseña.</string>
     <string name="delete">Eliminar</string>
     <string name="subjects">Materias</string>
+
+    <!--
+    <string name="all">TODO</string>-->
+    <string name="nameM">Taller de Desarrollo Movil para Plataforma Android</string>
+    <string name="date">Lunes y Martes</string>
+    <string name="hora">1:00 – 3:00 pm</string>
+    <string name="title_activity_main">Materias</string>
+    <string name="subtitle_activity_main">2021</string>
+    <string name="title_activity_add">Nueva Materia</string>
+    <string name="title_activity_edit">Editar Materia</string>
+    <string name="name_form">Nombre</string>
+    <string name="date_form">Fecha</string>
+    <string name="hora_form">Hora</string>
+    <string name="url_form">Url imagen</string>
+    <string name="description_form">Descripción</string>
+    <string name="save">Guardar</string>
+    <string name="description">En esta materia lo que se vera va a ser lo que vamos a ver</string>
 </resources>
