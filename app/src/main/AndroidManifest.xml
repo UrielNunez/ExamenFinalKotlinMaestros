@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Maestros">
         <activity
+            android:name=".Materias.AddActivity"
+            android:exported="true" />
+        <activity
             android:name=".Splash.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -31,7 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".Login.SignInActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

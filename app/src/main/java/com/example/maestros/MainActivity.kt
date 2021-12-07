@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.maestros.Login.AccountActivity
+import com.example.maestros.Materias.AddActivity
 import com.example.maestros.Materias.Materias
 import com.example.maestros.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
