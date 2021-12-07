@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/activity_add.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_delete_account.xml" value="0.203125" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/activity_list_alumns.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_materias_detail.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_sig_in.xml" value="0.23097826086956522" />
