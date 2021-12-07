@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.maestros.Login.AccountActivity
 import com.example.maestros.Materias.AddActivity
 import com.example.maestros.Materias.Materias
+import com.example.maestros.Materias.MateriasDetailActivity
 import com.example.maestros.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

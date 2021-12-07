@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Maestros">
         <activity
+            android:name=".Materias.MateriasDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Materias.DetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Materias.AddActivity"
             android:exported="true" />
         <activity
