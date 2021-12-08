@@ -51,6 +51,8 @@
 
 
     <string name="title_activity_add_alumnos">Nuevo Alumno</string>
+    <string name="semestre_card">Semestre: </string>
+    <string name="calificacion_card">Calificación: </string>
     <string name="name_form_alumnos">Nombre</string>
     <string name="semestre_form_alumnos">Semestre</string>
     <string name="califica_form_alumnos">Calificación</string>

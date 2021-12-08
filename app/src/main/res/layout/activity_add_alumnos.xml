@@ -10,7 +10,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:background="@color/purple_500"
+        android:background="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +23,7 @@
         android:text="@string/title_activity_add_alumnos"
         android:textColor="@color/white"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
@@ -35,7 +36,8 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -98,6 +100,7 @@
                 android:paddingTop="8dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="8dp" />
+
             <TextView
                 android:id="@+id/semestreTextView"
                 android:layout_width="120dp"
@@ -150,6 +153,7 @@
                 android:text="@string/califica_form_alumnos"
                 android:textColor="@color/text_dark"
                 android:textSize="18sp" />
+
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="240dp"
@@ -158,7 +162,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/ic_buttom"
+                android:background="@drawable/ic_button_add"
                 android:gravity="center"
                 android:text="@string/save"
                 android:textColor="@color/white"
