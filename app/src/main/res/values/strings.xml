@@ -37,7 +37,7 @@
     <string name="nameM">Taller de Desarrollo Movil para Plataforma Android</string>
     <string name="date">Lunes y Martes</string>
     <string name="hora">1:00 – 3:00 pm</string>
-    <string name="title_activity_main">Materias</string>
+    <string name="title_activity_main">Materias Impartidas</string>
     <string name="subtitle_activity_main">2021</string>
     <string name="title_activity_add">Nueva Materia</string>
     <string name="title_activity_edit">Editar Materia</string>
@@ -48,4 +48,11 @@
     <string name="description_form">Descripción</string>
     <string name="save">Guardar</string>
     <string name="description">En esta materia lo que se vera va a ser lo que vamos a ver</string>
+
+
+    <string name="title_activity_add_alumnos">Nuevo Alumno</string>
+    <string name="name_form_alumnos">Nombre</string>
+    <string name="semestre_form_alumnos">Semestre</string>
+    <string name="califica_form_alumnos">Calificación</string>
+
 </resources>

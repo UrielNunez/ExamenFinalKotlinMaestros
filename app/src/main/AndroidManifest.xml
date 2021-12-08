@@ -11,7 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Maestros">
         <activity
-            android:name=".Materias.ListAlumnsActivity"
+            android:name=".Alumnos.AlumnosDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Alumnos.AddAlumnosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Alumnos.ListAlumnsActivity"
             android:exported="true" />
         <activity
             android:name=".Materias.MateriasDetailActivity"

@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/drawable/ic_buttom.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/activity_add_alumnos.xml" value="0.1796875" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/activity_list_alumns.xml" value="0.1796875" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/activity_materias_detail.xml" value="0.1796875" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/alumnos_content.xml" value="0.1796875" />
+        <entry key="..\:/Users/uriel/AndroidStudioProjects/ExamenFinalKotlinMaestros/app/src/main/res/layout/materias_content.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/ic_bg.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/ic_field.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/ic_field1.xml" value="0.321025641025641" />
@@ -12,7 +19,6 @@
         <entry key="app/src/main/res/layout/activity_add.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_delete_account.xml" value="0.203125" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_list_alumns.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_materias_detail.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_sig_in.xml" value="0.23097826086956522" />

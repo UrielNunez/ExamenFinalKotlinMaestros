@@ -1,4 +1,4 @@
-package com.example.maestros
+package com.example.maestros.Alumnos
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,17 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.maestros.Login.AccountActivity
-import com.example.maestros.Materias.AddActivity
-import com.example.maestros.Alumnos.ListAlumnsActivity
-import com.example.maestros.Materias.Materias
-import com.example.maestros.Materias.MateriasDetailActivity
-import com.example.maestros.databinding.ActivityMainBinding
+import com.example.maestros.MainActivity
+import com.example.maestros.R
+import com.example.maestros.databinding.ActivityListAlumnsBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -26,40 +23,41 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_list_alumns.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.materias_content.view.*
+import kotlinx.android.synthetic.main.alumnos_content.view.*
 
-class MainActivity : AppCompatActivity() {
+class ListAlumnsActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityListAlumnsBinding
+
 
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
-    private val listMaterias:MutableList<Materias> = ArrayList()
-    val myRef = database.getReference("materias")
+    private val listAlumnos:MutableList<Alumnos> = ArrayList()
+    val myRef = database.getReference("alumnos")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_list_alumns)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityListAlumnsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Initialize Firebase Auth
         auth = Firebase.auth
 
-        binding.accountButton.setOnClickListener {
-            intent = Intent(this, AccountActivity::class.java)
+        binding.newFloatingActionButtonAlumnos.setOnClickListener {
+            intent = Intent(this, AddAlumnosActivity::class.java)
             startActivity(intent)
         }
 
-        binding.newFloatingActionButton.setOnClickListener {
-            intent = Intent(this, AddActivity::class.java)
-            startActivity(intent)
+        binding.backImageView.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            this.startActivity(intent)
         }
 
-        listMaterias.clear()
-        setupRecyclerView(materiasRecyclerView)
+        listAlumnos.clear()
+        setupRecyclerView(alumnosRecyclerView)
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
@@ -67,18 +65,16 @@ class MainActivity : AppCompatActivity() {
         messagesListener = object : ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                listMaterias.clear()
+                listAlumnos.clear()
                 dataSnapshot.children.forEach { child ->
-                    val materias: Materias? =
-                        Materias(child.child("name").getValue<String>(),
-                            child.child("date").getValue<String>(),
-                            child.child("hora").getValue<String>(),
-                            child.child("description").getValue<String>(),
-                            child.child("url").getValue<String>(),
+                    val alumnos: Alumnos? =
+                        Alumnos(child.child("name").getValue<String>(),
+                            child.child("semestre").getValue<String>(),
+                            child.child("califica").getValue<String>(),
                             child.key)
-                    materias?.let { listMaterias.add(it) }
+                    alumnos?.let { listAlumnos.add(it) }
                 }
-                recyclerView.adapter = MateriasViewAdapter(listMaterias)
+                recyclerView.adapter = AlumnosViewAdapter(listAlumnos)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -90,39 +86,26 @@ class MainActivity : AppCompatActivity() {
         deleteSwipe(recyclerView)
     }
 
-    class MateriasViewAdapter(private val values: List<Materias>) :
-        RecyclerView.Adapter<MateriasViewAdapter.ViewHolder>() {
+    class AlumnosViewAdapter(private val values: List<Alumnos>) :
+        RecyclerView.Adapter<AlumnosViewAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.materias_content, parent, false)
+                .inflate(R.layout.alumnos_content, parent, false)
             return ViewHolder(view)
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val materias = values[position]
-            holder.mNameTextView.text = materias.name
-            holder.mDateTextView.text = materias.date
-            holder.mHoraTextView.text = materias.hora
-            holder.mPosterImgeView?.let {
-                Glide.with(holder.itemView.context)
-                    .load(materias.url)
-                    .into(it)
-            }
+            val alumnos = values[position]
+            holder.mNameTextView.text = alumnos.name
+            holder.mSemestreTextView.text = alumnos.semestre
+            holder.mCalificaTextView.text = alumnos.califica
 
             holder.itemView.setOnClickListener { v ->
-                val intent = Intent(v.context, MateriasDetailActivity::class.java).apply {
-                    putExtra("key", materias.key)
+                val intent = Intent(v.context, AlumnosDetailActivity::class.java).apply {
+                    putExtra("key", alumnos.key)
                 }
                 v.context.startActivity(intent)
-            }
-
-
-            //Editar
-            holder.itemView.setOnLongClickListener{ v ->
-                val intent = Intent(v.context, ListAlumnsActivity::class.java)
-                v.context.startActivity(intent)
-                true
             }
 
 
@@ -132,9 +115,8 @@ class MainActivity : AppCompatActivity() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val mNameTextView: TextView = view.nameTextView
-            val mDateTextView: TextView = view.dateTextView
-            val mHoraTextView: TextView = view.horaTextView
-            val mPosterImgeView: ImageView? = view.posterImgeView
+            val mSemestreTextView: TextView = view.semestreTextView
+            val mCalificaTextView: TextView = view.calificaTextView
         }
     }
 
@@ -145,8 +127,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listMaterias.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
-                listMaterias.removeAt(viewHolder.adapterPosition)
+                listAlumnos.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
+                listAlumnos.removeAt(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyDataSetChanged()
             }
