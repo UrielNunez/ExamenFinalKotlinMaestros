@@ -5,6 +5,7 @@ Contrseña : 654321
 
 - Para ver detalle de las materias dar click a una de ellas
 - Para visualisar a los alumnos de la materia dejar precionado hasta que se vea la lista de alumnos
+- Para eliminar una materia o alumno deslizar la tarjeta de derecha a izquierda
 - Para agregar a un nuevo alumno a la materia dar click en el FloatingActionButton de la vista de lista alumnos
 - Para agregar una nueva materia dar click en el FloatingActionButton de la vista de materias
 - Para ver la vista de Perfil de usuario dar click en el icono de la parte superior derecha
